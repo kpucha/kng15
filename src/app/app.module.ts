@@ -3,8 +3,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpBackend, HttpClientModule } from '@angular/common/http';
+import { isDevMode, NgModule } from '@angular/core';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
-import { NgModule } from '@angular/core';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 /**
@@ -41,6 +42,12 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
         useFactory: HttpLoaderFactory,
         deps: [HttpBackend],
       },
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
   providers: [],
