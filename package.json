@@ -6,13 +6,12 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "compodoc:build": "compodoc -p tsconfig.doc.json --hideGenerator",
-    "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json --hideGenerator -s",
+    "test": "ng test --no-watch",
+    "compodoc:build": "compodoc -p tsconfig.doc.json --hideGenerator --theme material --unitTestCoverage ./coverage/coverage-summary.json -s",
+    "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json --hideGenerator --theme material --unitTestCoverage ./coverage/coverage-summary.json  -s",
     "compodoc:serve": "compodoc -s"
   },
   "private": true,
-  "prettier": "@kpucha/prettier-cfg",
   "dependencies": {
     "@angular/animations": "^15.2.0",
     "@angular/cdk": "^15.2.3",
@@ -25,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "@compodoc/compodoc": "^1.1.19",
+    "istanbul": "^0.4.5",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
@@ -33,7 +33,6 @@
     "@angular-devkit/build-angular": "^15.2.4",
     "@angular/cli": "~15.2.4",
     "@angular/compiler-cli": "^15.2.0",
-    "@kpucha/prettier-cfg": "1.0.1",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
@@ -41,6 +40,9 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "karma-mocha": "^2.0.1",
+    "karma-typescript": "^5.5.3",
+    "mocha": "^10.2.0",
     "typescript": "~4.9.4"
   }
 }
