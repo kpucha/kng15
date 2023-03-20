@@ -1,12 +1,18 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { NgModule } from '@angular/core';
+import { SwitchComponent } from './components/switch/switch.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [],
+  declarations: [SwitchComponent],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    MatIconModule,
+    TranslateModule.forChild(),
+    MatSidenavModule,
+  ],
+  exports: [SwitchComponent, MatSidenavModule, MatIconModule],
 })
-export class LayoutModule { }
+export class LayoutModule {}

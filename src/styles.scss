@@ -12,28 +12,45 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$kng15-primary: mat.define-palette(mat.$indigo-palette);
-$kng15-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
-$kng15-warn: mat.define-palette(mat.$red-palette);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$kng15-theme: mat.define-light-theme((
-  color: (
-    primary: $kng15-primary,
-    accent: $kng15-accent,
-    warn: $kng15-warn,
+$primary-light-on: mat.define-palette(mat.$grey-palette, 100, 50, 400);
+$accent-light-on: mat.define-palette(mat.$light-blue-palette);
+$warn-light-on: mat.define-palette(mat.$deep-orange-palette, A200);
+$theme-light-on: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary-light-on,
+      accent: $accent-light-on,
+      warn: $warn-light-on,
+    ),
   )
-));
+);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include mat.all-component-themes($kng15-theme);
+$primary-light-off: mat.define-palette(mat.$grey-palette, 900, 800, 900);
+$accent-light-off: mat.define-palette(mat.$light-blue-palette);
+$warn-light-off: mat.define-palette(mat.$deep-orange-palette);
+$custom-background-color: #15202b;
+$theme-light-off: mat.define-dark-theme(
+  (
+    color: (
+      primary: $primary-light-off,
+      accent: $accent-light-off,
+      warn: $warn-light-off,
+    ),
+  )
+);
 
-/* You can add global styles to this file, and also import other style files */
+.light-on {
+  @include mat.all-component-themes($theme-light-on);
+}
+
+.light-off {
+  @include mat.all-component-themes($theme-light-off);
+}
+
+@font-face {
+  font-family: "ArchitectsDaughter";
+  src: url("/fonts/ArchitectsDaughter-Regular.ttf") format("truetype");
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

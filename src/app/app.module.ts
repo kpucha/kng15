@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpBackend, HttpClientModule } from '@angular/common/http';
 import { isDevMode, NgModule } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -53,4 +54,8 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(iconRegistry: MatIconRegistry) {
+    iconRegistry.setDefaultFontSetClass('material-symbols-outlined');
+  }
+}
