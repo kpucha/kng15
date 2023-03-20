@@ -1,6 +1,5 @@
+import { BlogPage } from '../src/app/pages/public/blog/blog.page';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { BlogPage } from './blog.page';
 
 describe('BlogPage', () => {
   let component: BlogPage;
@@ -8,9 +7,8 @@ describe('BlogPage', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BlogPage ]
-    })
-    .compileComponents();
+      declarations: [BlogPage],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BlogPage);
     component = fixture.componentInstance;

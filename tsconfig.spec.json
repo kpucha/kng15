@@ -8,7 +8,7 @@
     ]
   },
   "include": [
-    "src/**/*.spec.ts",
-    "src/**/*.d.ts"
+    "tests/**/*.spec.ts",
+    "tests/**/*.d.ts"
   ]
 }

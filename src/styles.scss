@@ -40,17 +40,25 @@ $theme-light-off: mat.define-dark-theme(
 );
 
 .light-on {
-  @include mat.all-component-themes($theme-light-on);
+  @include mat.all-component-colors($theme-light-on);
 }
 
 .light-off {
-  @include mat.all-component-themes($theme-light-off);
+  @include mat.all-component-colors($theme-light-off);
 }
 
 @font-face {
   font-family: "ArchitectsDaughter";
-  src: url("/fonts/ArchitectsDaughter-Regular.ttf") format("truetype");
+  src: url("assets/fonts/ArchitectsDaughter-Regular.ttf") format("truetype");
 }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.handwrite {font-family: "ArchitectsDaughter";}
+.fill-remaining-space {flex: 1 1 auto;}
+.material-symbols-outlined { margin: 0.25em;}
+button {
+  .mat-icon {
+    margin:auto !important; 
+  }
+}

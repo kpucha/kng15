@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpBackend, HttpClientModule } from '@angular/common/http';
 import { isDevMode, NgModule } from '@angular/core';
+import { LayoutModule } from './modules/layout/layout.module';
 import { MatIconRegistry } from '@angular/material/icon';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -35,6 +36,8 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    LayoutModule,
+    HttpClientModule,
     TranslateModule.forRoot({
       defaultLanguage: 'es',
       useDefaultLang: true,

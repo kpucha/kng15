@@ -1,6 +1,5 @@
-import { IsLoggedGuard } from '../is-logged.guard';
+import { IsLoggedGuard } from '../src/app/modules/auth/guards/is-logged.guard';
 import { TestBed } from '@angular/core/testing';
-
 
 describe('IsLoggedGuard', () => {
   let guard: IsLoggedGuard;

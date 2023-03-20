@@ -1,6 +1,5 @@
+import { AboutPage } from '../src/app/pages/public/about/about.page';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { AboutPage } from './about.page';
 
 describe('AboutPage', () => {
   let component: AboutPage;
@@ -8,9 +7,8 @@ describe('AboutPage', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AboutPage ]
-    })
-    .compileComponents();
+      declarations: [AboutPage],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AboutPage);
     component = fixture.componentInstance;

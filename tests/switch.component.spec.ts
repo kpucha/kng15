@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { SwitchComponent } from './switch.component';
+import { SwitchComponent } from '../src/app/modules/shared/components/switch/switch.component';
 
 describe('SwitchComponent', () => {
   let component: SwitchComponent;
@@ -8,9 +7,8 @@ describe('SwitchComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SwitchComponent ]
-    })
-    .compileComponents();
+      declarations: [SwitchComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SwitchComponent);
     component = fixture.componentInstance;

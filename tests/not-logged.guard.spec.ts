@@ -1,6 +1,5 @@
-import { NotLoggedGuard } from '../not-logged.guard';
+import { NotLoggedGuard } from '../src/app/modules/auth/guards/not-logged.guard';
 import { TestBed } from '@angular/core/testing';
-
 
 describe('NotLoggedGuard', () => {
   let guard: NotLoggedGuard;

@@ -1,18 +1,13 @@
+import { AuthModule } from '../auth/auth.module';
 import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { HeaderComponent } from './components/header/header.component';
 import { NgModule } from '@angular/core';
-import { SwitchComponent } from './components/switch/switch.component';
+import { SharedModule } from '../shared/shared.module';
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [SwitchComponent],
-  imports: [
-    CommonModule,
-    MatIconModule,
-    TranslateModule.forChild(),
-    MatSidenavModule,
-  ],
-  exports: [SwitchComponent, MatSidenavModule, MatIconModule],
+  declarations: [HeaderComponent],
+  imports: [CommonModule, TranslateModule.forChild(), SharedModule, AuthModule],
+  exports: [HeaderComponent],
 })
 export class LayoutModule {}
