@@ -3,29 +3,8 @@
     <kng-menu-button></kng-menu-button>
     <span class="handwrite toolbar-title">kpucha.dev</span>
     <span class="fill-remaining-space"></span>
-    <nav mat-tab-nav-bar [tabPanel]="tabPanel" color="accent">
-      <a mat-tab-link *ngFor="let link of menus" (click)="activeLink = link.url" [active]="activeLink == link.url"
-        class="handwrite">
-        <mat-icon class="example-tab-icon" color="accent">
-          {{link.icon}}
-        </mat-icon>
-        {{ link.name }}
-      </a>
-      <!-- <a mat-tab-link disabled>Disabled Link</a> -->
-    </nav>
-    <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+    <kng-nav-tabs></kng-nav-tabs>
     <span class="fill-remaining-space"></span>
-    <button mat-icon-button>
-      <mat-icon color="warn">
-        notification_important
-      </mat-icon>
-    </button>
-    <kng-switch></kng-switch>
-    <button mat-icon-button disableRipple>
-      <mat-icon>
-        translate
-      </mat-icon>
-    </button>
-    <kng-login-button></kng-login-button>
+    <kng-action-buttons></kng-action-buttons>
   </mat-toolbar>
 </header>

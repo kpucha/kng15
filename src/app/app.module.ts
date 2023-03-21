@@ -8,6 +8,7 @@ import { LayoutModule } from './modules/layout/layout.module';
 import { MatIconRegistry } from '@angular/material/icon';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { SharedModule } from './modules/shared/shared.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 /**
@@ -36,6 +37,7 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    SharedModule,
     LayoutModule,
     HttpClientModule,
     TranslateModule.forRoot({
