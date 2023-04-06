@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            {{"what-i-do"|translate}}
+        </mat-card-title>
+        <div mat-card-avatar><mat-icon>av_timer</mat-icon></div>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-accordion>
+            <mat-expansion-panel matTooltip="{{'view-previous'|translate}}" class="expansion-panel-header"
+                (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{"working"|translate}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        {{ currentWork }}
+                    </mat-panel-description>
+                    <mat-icon>history</mat-icon>
+                </mat-expansion-panel-header>
+                <mat-divider></mat-divider>
+                <kng-work-hist></kng-work-hist>
+            </mat-expansion-panel>
+            <mat-expansion-panel matTooltip="{{'view-previous'|translate}}" class="expansion-panel-header"
+                (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{"studying"|translate}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        {{ currentStudy }}
+                    </mat-panel-description>
+                    <mat-icon>history</mat-icon>
+                </mat-expansion-panel-header>
+                <mat-divider></mat-divider>
+                <kng-study-hist></kng-study-hist>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-card-content>
+</mat-card>

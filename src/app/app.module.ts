@@ -2,6 +2,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpBackend, HttpClientModule } from '@angular/common/http';
 import { isDevMode, NgModule } from '@angular/core';
 import { LayoutModule } from './modules/layout/layout.module';
@@ -55,6 +56,7 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

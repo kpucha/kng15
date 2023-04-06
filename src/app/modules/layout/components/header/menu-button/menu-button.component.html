@@ -1,5 +1,6 @@
-<button mat-icon-button disableRipple>
+<button mat-icon-button disableRipple
+    (click)="isSidenavOpen ? layoutService.closeSidenav():layoutService.openSidenav()">
     <mat-icon color="accent">
-        menu
+        {{isSidenavOpen ? "close": "menu"}}
     </mat-icon>
 </button>

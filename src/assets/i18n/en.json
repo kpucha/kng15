@@ -1,0 +1,30 @@
+{
+  "blog": "Blog",
+  "tools": "Tools",
+  "about": "About",
+  "help": "Help",
+  "admin": "Admin",
+  "translate": "Translate",
+  "en": "English",
+  "es": "Español",
+  "light": {
+    "on": "Lights on",
+    "off": "Lights off"
+  },
+  "gitgraph-cv-title": "If my life were a git",
+  "gitgraph-cv-subtitle": "More detailed information is available on my LinkedIn and GitHub",
+  "what-i-do": "What I do?",
+  "working": "Working",
+  "years-of-xp": "Years of experience",
+  "studying": "Studying",
+  "other-studies": "Certs & Courses",
+  "year": "Year",
+  "name": "Name",
+  "certifier": "Certifier",
+  "exp": "Exp",
+  "dates": "Dates",
+  "rol": "Rol",
+  "company": "Company",
+  "view-previous": "View previous",
+  "contact": "Contact"
+}

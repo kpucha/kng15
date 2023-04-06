@@ -1,6 +1,7 @@
 import { AboutPage } from './about/about.page';
 import { BlogPage } from './blog/blog.page';
 import { HomePage } from './home/home.page';
+import { LoginPage } from './login/login.page';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -10,10 +11,11 @@ import { RouterModule, Routes } from '@angular/router';
  * @type {Routes}
  */
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'prefix' },
+  { path: '', redirectTo: 'about', pathMatch: 'prefix' },
   { path: 'about', component: AboutPage },
   { path: 'blog', component: BlogPage },
   { path: 'home', component: HomePage },
+  { path: 'login', component: LoginPage },
 ];
 
 /**
@@ -25,6 +27,6 @@ const routes: Routes = [
  */
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class PublicRoutingModule { }
+export class PublicRoutingModule {}

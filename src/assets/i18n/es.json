@@ -1,0 +1,30 @@
+{
+  "blog": "Blog",
+  "tools": "Herramientas",
+  "about": "Sobre mi",
+  "help": "Ayuda",
+  "admin": "Admin",
+  "translate": "Traducir",
+  "en": "English",
+  "es": "Español",
+  "light": {
+    "on": "Encender",
+    "off": "Apagar"
+  },
+  "gitgraph-cv-title": "Si mi vida fuese un git",
+  "gitgraph-cv-subtitle": "Hay información mas detallada en mi LinkedIn y GitHub",
+  "what-i-do": "¿Qué hago?",
+  "working": "Trabajando",
+  "years-of-xp": "Años de experiencia",
+  "studying": "Estudiando",
+  "other-studies": "Cursos y formaciones que he realizado",
+  "year": "Año",
+  "name": "Nombre",
+  "certifier": "Certificador",
+  "exp": "Exp",
+  "dates": "Fechas",
+  "rol": "Rol",
+  "company": "Empresa",
+  "view-previous": "Ver anteriores",
+  "contact": "Contacto"
+}

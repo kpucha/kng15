@@ -1,9 +1,9 @@
 <header class="primary-toolbar">
   <mat-toolbar>
     <kng-menu-button></kng-menu-button>
-    <span class="handwrite toolbar-title">kpucha.dev</span>
+    <span class="toolbar-title">kpucha.dev</span>
     <span class="fill-remaining-space"></span>
-    <kng-nav-tabs></kng-nav-tabs>
+    <kng-nav-tabs *ngIf="layoutSize.isL || layoutSize.isXL || layoutSize.isXXL" position="header"></kng-nav-tabs>
     <span class="fill-remaining-space"></span>
     <kng-action-buttons></kng-action-buttons>
   </mat-toolbar>

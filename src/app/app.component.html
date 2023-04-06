@@ -1,10 +1,14 @@
-<kng-header></kng-header>
+<kng-header [layoutSize]="layoutSize"></kng-header>
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate" color="accent"></mat-progress-bar>
 <mat-sidenav-container class="fit-sidenav">
-    <mat-sidenav class="sidenav-menu" mode="side" opened color="accent">
-        a
+    <mat-sidenav class="sidenav-menu" mode="side" [opened]="sidenavOpened">
+        <kng-sidenav></kng-sidenav>
+        <kng-nav-tabs *ngIf="layoutSize.isS || layoutSize.isM" position="sidenav"></kng-nav-tabs>
+        <kng-sidenav-secondary *ngIf="!layoutSize.isXL && !layoutSize.isXXL"></kng-sidenav-secondary>
     </mat-sidenav>
-    <mat-sidenav class="sidenav-menu" mode="side" position="end" opened>
-        b
+    <mat-sidenav *ngIf="layoutSize.isXL || layoutSize.isXXL" class="sidenav-menu" mode="side" position="end"
+        [opened]="sidenavOpened">
+        <kng-sidenav-secondary></kng-sidenav-secondary>
     </mat-sidenav>
     <mat-sidenav-content class="sidenav-content">
         <router-outlet></router-outlet>
