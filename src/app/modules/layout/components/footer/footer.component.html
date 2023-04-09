@@ -1,6 +1,12 @@
 <footer class="primary-footer">
     <mat-toolbar>
         <span class="fill-remaining-space"></span>
-        <span>© 2023 kpucha.dev</span>
+        <span>
+            <!-- <button class="policy-link" mat-button></button> |
+            <button class="policy-link" mat-button></button> © -->
+            <a [routerLink]="['/privacy-policy']">{{'privacy-policy'|translate}}</a> |
+            <a [routerLink]="['/cookies-policy']">{{'cookies-policy'|translate}}</a> ©
+            2023 kpucha.dev
+        </span>
     </mat-toolbar>
 </footer>

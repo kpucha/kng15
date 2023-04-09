@@ -5,7 +5,6 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'kng-switch',
   templateUrl: './switch.component.html',
-  styleUrls: ['./switch.component.scss'],
 })
 export class SwitchComponent implements OnInit {
   private classOn: string = 'light-on';

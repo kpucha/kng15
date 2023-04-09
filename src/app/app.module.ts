@@ -1,9 +1,13 @@
+import { AngularD3CloudModule } from 'angular-d3-cloud';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { environment } from 'src/environments/environment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 import { HttpBackend, HttpClientModule } from '@angular/common/http';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { isDevMode, NgModule } from '@angular/core';
 import { LayoutModule } from './modules/layout/layout.module';
 import { MatIconRegistry } from '@angular/material/icon';
@@ -11,6 +15,12 @@ import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { SharedModule } from './modules/shared/shared.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import {
+  provideAnalytics,
+  getAnalytics,
+  ScreenTrackingService,
+  UserTrackingService,
+} from '@angular/fire/analytics';
 
 /**
  * Description
@@ -22,7 +32,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 export function HttpLoaderFactory(httpBackend: HttpBackend) {
   return new MultiTranslateHttpLoader(httpBackend, [
     { prefix: './assets/i18n/', suffix: '.json' },
-    //{ prefix: './assets/i18n/scrum-guide/', suffix: '.json' },
+    { prefix: './assets/i18n/privacy-policy/', suffix: '.json' },
+    { prefix: './assets/i18n/cookies-policy/', suffix: '.json' },
   ]);
 }
 /**
@@ -56,7 +67,11 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAnalytics(() => getAnalytics()),
+    provideAuth(() => getAuth()),
     FontAwesomeModule,
+    AngularD3CloudModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

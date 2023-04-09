@@ -1,0 +1,27 @@
+<!--
+    VERSION HORIZONTAL PARA APARECER EN EL TOOLBAR
+-->
+<div *ngIf="position=='header'">
+    <nav mat-tab-nav-bar [tabPanel]="tabPanel" color="accent">
+        <a mat-tab-link *ngFor="let menu of menus" (click)="goTo(menu.url)" [active]="activeLink == menu.url">
+            <mat-icon>
+                {{menu.icon}}
+            </mat-icon>
+            {{ menu.name | lowercase | translate }}
+        </a>
+    </nav>
+    <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+</div>
+<!--
+    VERSION VERTICAL PARA APARECER EN EL SIDENAV
+-->
+<div *ngIf="position=='sidenav'">
+    <mat-nav-list>
+        <mat-list-item *ngFor="let menu of menus" (click)="goTo(menu.url)" [activated]="activeLink == menu.url">
+            <mat-icon matListItemIcon class="nav-list-icon">
+                {{menu.icon}}
+            </mat-icon>
+            <span matListItemLine>{{ menu.name | lowercase | translate}}</span>
+        </mat-list-item>
+    </mat-nav-list>
+</div>

@@ -1,0 +1,25 @@
+{
+  "privacy-policy": "Política de privacidad",
+  "pp-intro": "En kpucha.dev, valoramos su privacidad y nos comprometemos a proteger su información personal. Esta política de privacidad describe cómo recopilamos, utilizamos y protegemos la información que proporciona a través de nuestro sitio web.",
+  "pp-titles": {
+    "info-we-collect": "Información que recopilamos",
+    "how-use-info": "Cómo utilizamos su información",
+    "sharing-info": "Compartir información",
+    "cookies": "Cookies",
+    "info-sec": "Seguridad de la información",
+    "updates": "Actualizaciones de la política de privacidad",
+    "user-rights": "Derechos del usuario",
+    "contact": "Contacto"
+  },
+  "pp-contents": {
+    "info-we-collect": "Recopilamos información personal de los usuarios que visitan nuestro sitio web, como su nombre, dirección de correo electrónico y dirección postal. También podemos recopilar información de seguimiento, como su dirección IP, tipo de navegador, idioma preferido, páginas visitadas y la fecha y hora de su visita.",
+    "how-use-info": "Utilizamos la información personal que recopilamos para proporcionarle contenido personalizado y mejorar su experiencia en nuestro sitio web. También podemos utilizar su información para enviarle boletines informativos, promociones y ofertas especiales relacionadas con nuestros productos y servicios.",
+    "sharing-info": "No compartiremos su información personal con terceros sin su consentimiento previo, excepto en los casos en que la ley lo exija o cuando sea necesario para proteger nuestros derechos o propiedad.",
+    "cookies": "Utilizamos cookies en nuestro sitio web para rastrear su actividad y personalizar su experiencia en línea. Las cookies son pequeños archivos que se almacenan en su dispositivo y nos permiten identificar su navegador y recordar sus preferencias. También podemos utilizar cookies de terceros, como Google Analytics, para recopilar información sobre su actividad en nuestro sitio web con fines de análisis y publicidad.",
+    "info-sec": "Tomamos medidas de seguridad razonables para proteger su información personal de acceso no autorizado o divulgación. Sin embargo, no podemos garantizar que su información esté completamente segura debido a la naturaleza inherente de Internet.",
+    "updates": "Nos reservamos el derecho de actualizar esta política de privacidad en cualquier momento y sin previo aviso. Se le notificará de cualquier cambio significativo en nuestra política de privacidad mediante la publicación de la política revisada en nuestro sitio web.",
+    "user-rights": "Tiene derecho a acceder, corregir o eliminar su información personal en cualquier momento. También puede optar por no recibir correos electrónicos promocionales en el futuro siguiendo las instrucciones en el correo electrónico.",
+    "contact": "Si tiene alguna pregunta o inquietud sobre nuestra política de privacidad, comuníquese con nosotros a través de nuestro formulario de contacto en nuestro sitio web.",
+    "law": "Esta política de privacidad se rige por las leyes de España y cualquier disputa que surja de ella se resolverá mediante arbitraje vinculante de acuerdo con las reglas de arbitraje comercial internacional de España."
+  }
+}

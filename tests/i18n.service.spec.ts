@@ -1,4 +1,4 @@
-import { I18nService } from '../src/app/modules/i18n/i18n.service';
+import { I18nService } from '../src/app/modules/shared/services/i18n.service';
 import { TestBed } from '@angular/core/testing';
 
 describe('I18nService', () => {

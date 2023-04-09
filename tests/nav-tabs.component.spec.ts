@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NavTabsComponent } from '../src/app/modules/layout/components/header/nav-tabs/nav-tabs.component';
+import { NavTabsComponent } from '../src/app/modules/shared/components/nav-tabs/nav-tabs.component';
 
 describe('NavTabsComponent', () => {
   let component: NavTabsComponent;

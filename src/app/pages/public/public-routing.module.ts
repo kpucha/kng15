@@ -1,8 +1,10 @@
 import { AboutPage } from './about/about.page';
 import { BlogPage } from './blog/blog.page';
+import { Component, NgModule } from '@angular/core';
+import { CookiesPolicyPage } from './cookies-policy/cookies-policy.page';
 import { HomePage } from './home/home.page';
-import { LoginPage } from './login/login.page';
-import { NgModule } from '@angular/core';
+import { PostPage } from './post/post.page';
+import { PrivacyPolicyPage } from './privacy-policy/privacy-policy.page';
 import { RouterModule, Routes } from '@angular/router';
 
 /**
@@ -14,8 +16,10 @@ const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'prefix' },
   { path: 'about', component: AboutPage },
   { path: 'blog', component: BlogPage },
+  { path: 'blog/:slug', component: PostPage },
   { path: 'home', component: HomePage },
-  { path: 'login', component: LoginPage },
+  { path: 'privacy-policy', component: PrivacyPolicyPage },
+  { path: 'cookies-policy', component: CookiesPolicyPage },
 ];
 
 /**

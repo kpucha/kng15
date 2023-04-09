@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { LayoutService } from './modules/layout/layout.service';
 import { LayoutSize } from './interfaces/layout-size.interface';
 import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
@@ -14,6 +14,7 @@ import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
   selector: 'kng-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: { disabled: true } },
   ],
@@ -25,7 +26,7 @@ export class AppComponent implements OnDestroy {
    * @type {LayoutSize}
    */
   layoutSize: LayoutSize = {} as LayoutSize;
-  sidenavOpened: boolean = true;
+  sidenavOpened: boolean = false;
   isLoading: boolean = true;
 
   /**

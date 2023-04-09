@@ -1,0 +1,46 @@
+<mat-card *ngIf="!(isSigned$ | async); else avatar" (click)="signIn()" class="pointer">
+  <mat-card-header>
+    <mat-card-title>
+      Hi Guest! Please Log In
+    </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image width="48px" height="48px" alt="anonymous user profile image" src="/assets/icons/icon-96x96.png"
+    class="avatar" mat-tooltip="Login">
+</mat-card>
+
+
+
+<!-- <button mat-flat-button *ngIf="!(isSigned$ | async); else avatar" class="sign-in-button" (click)="signIn()">
+  <img class="sign-in-logo" src="./assets/img/logos/g-logo.png" />{{
+  "working" | translate | uppercase
+  }}
+</button> -->
+
+<ng-template #avatar>
+  <mat-card class="pointer">
+    <mat-card-header>
+      <img mat-card-avatar class="avatar" width="48px" height="48px" alt="logged user profile image"
+        [src]="signedUser.photoURL" referrerpolicy="no-referrer" (click)="signOut()" />
+      <mat-card-title>
+        {{signedUser.displayName}}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{signedUser.email}}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="list-icons-card-content">
+      <button mat-icon-button matTooltip="Settings" aria-label="Link to LinkedIn">
+        <mat-icon>settings</mat-icon>
+      </button>
+      <!-- <button mat-icon-button matTooltip="Favorites" aria-label="Link to GitHub">
+        <mat-icon>settings</mat-icon>
+      </button>
+      <button mat-icon-button matTooltip="StackOverflow" aria-label="Link to StackOverflow">
+        <mat-icon>settings</mat-icon>
+      </button> -->
+      <button mat-icon-button matTooltip="Logout" aria-label="Logout" (click)="signOut()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-card-content>
+  </mat-card>
+</ng-template>

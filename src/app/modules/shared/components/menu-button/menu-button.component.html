@@ -1,0 +1,6 @@
+<button mat-icon-button disableRipple (click)="isSidenavOpen ? layoutService.closeSidenav():layoutService.openSidenav()"
+    aria-label="Menu button">
+    <mat-icon color="accent">
+        {{isSidenavOpen ? "close": "menu"}}
+    </mat-icon>
+</button>

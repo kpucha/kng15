@@ -40,7 +40,8 @@ export class LayoutService implements OnDestroy {
    * @type {LayoutSize}
    */
   currentLayoutSize: LayoutSize = {} as LayoutSize;
-  isSidenavOpen: boolean = true;
+  currentActiveLink: string = '';
+  isSidenavOpen: boolean = false;
   isLoading: boolean = true;
   /**
    * Emite los nuevos tamaños si hay cambios
@@ -50,6 +51,7 @@ export class LayoutService implements OnDestroy {
   @Output() sizeChange: EventEmitter<LayoutSize> = new EventEmitter();
   @Output() sidenavChange: EventEmitter<boolean> = new EventEmitter();
   @Output() loadingChange: EventEmitter<boolean> = new EventEmitter();
+  @Output() activeLinkChange: EventEmitter<string> = new EventEmitter();
 
   /**
    * Creates an instance of LayoutService.
@@ -108,5 +110,10 @@ export class LayoutService implements OnDestroy {
   public setLoading(state: boolean): void {
     this.isLoading = state;
     this.loadingChange.emit(this.isLoading);
+  }
+
+  public setActiveLink(link: string): void {
+    this.currentActiveLink = link;
+    this.activeLinkChange.emit(this.currentActiveLink);
   }
 }

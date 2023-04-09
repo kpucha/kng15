@@ -1,0 +1,15 @@
+@import "../../../../../assets/theme/constants";
+
+.nav-list-icon {
+  margin-top: 6px !important;
+}
+
+.mdc-list-item--activated {
+  border-right: 3px solid $accent-color;
+  .nav-list-icon {
+    color: $accent-color !important;
+  }
+  .mdc-list-item__secondary-text {
+    color: $accent-color !important;
+  }
+}

@@ -1,4 +1,4 @@
-import { ActionButtonsComponent } from '../src/app/modules/layout/components/header/action-buttons/action-buttons.component';
+import { ActionButtonsComponent } from '../src/app/modules/shared/components/action-buttons/action-buttons.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 describe('ActionButtonsComponent', () => {

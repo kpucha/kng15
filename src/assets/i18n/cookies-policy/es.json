@@ -1,0 +1,24 @@
+{
+  "cookies-policy": "Política de cookies",
+  "cookies-intro": "En kpucha.dev, utilizamos cookies para personalizar tu experiencia en línea y analizar el uso del sitio web. Esta política explica cómo utilizamos las cookies y las opciones que tienes con respecto a su uso.",
+  "cookies-titles": {
+    "what": "¿Qué son las cookies?",
+    "types": "Tipos de cookies que utilizamos",
+    "managing-info": "Gestión de cookies",
+    "updates": "Actualizaciones de la política de cookies",
+    "contact": "Contacto"
+  },
+  "cookies-contents": {
+    "what": "Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Permiten que el sitio web reconozca tu navegador y recuerde tus preferencias, como la configuración de idioma, la información de inicio de sesión y los elementos del carrito de compras. Las cookies también ayudan a los propietarios del sitio web a analizar cómo los visitantes interactúan con su sitio web y mejorar el rendimiento del sitio.",
+    "types": "Utilizamos los siguientes tipos de cookies en kpucha.dev:",
+    "types-essential": "Cookies esenciales: Estas cookies son necesarias para que el sitio web funcione correctamente y no se pueden desactivar. Permiten funciones básicas como la navegación por páginas y el acceso a áreas seguras del sitio web.",
+    "types-performance": "Cookies de rendimiento: Estas cookies nos ayudan a comprender cómo los visitantes interactúan con nuestro sitio web mediante la recopilación de información como las páginas más visitadas y si los visitantes reciben mensajes de error. No recopilan ninguna información personalmente identificable.",
+    "types-advertising": "Cookies de publicidad: Estas cookies se utilizan para proporcionar anuncios dirigidos basados en tu comportamiento de navegación e intereses. Pueden ser utilizadas por anunciantes de terceros para mostrar anuncios en otros sitios web.",
+    "types-analytics": "Cookies de análisis: Estas cookies se utilizan para recopilar información sobre cómo los visitantes utilizan nuestro sitio web. Utilizamos esta información para elaborar informes y mejorar nuestro sitio web. Estas cookies son colocadas por proveedores de análisis de terceros como Google Analytics.",
+    "managing-info": "Puedes elegir aceptar o rechazar las cookies en kpucha.dev ajustando la configuración de tu navegador. La mayoría de los navegadores aceptan automáticamente las cookies, pero generalmente puedes modificar la configuración de tu navegador para rechazar las cookies si lo prefieres. Sin embargo, si eliges rechazar las cookies, es posible que algunas funciones del sitio web no funcionen correctamente.",
+    "managing-info2": "También puedes optar por no recibir publicidad dirigida de anunciantes de terceros visitando la página de exclusión voluntaria de la Alianza de Publicidad Digital (http://optout.aboutads.info/) o la página de exclusión voluntaria de la Iniciativa de Publicidad en Red (http://www.networkadvertising.org/choices/).",
+    "updates": "Nos reservamos el derecho de actualizar esta política de cookies en cualquier momento y sin previo aviso. Te notificaremos cualquier cambio significativo en nuestra política de cookies publicando la política revisada en nuestro sitio web.",
+    "contact": "Si tienes alguna pregunta o inquietud acerca de nuestra política de cookies, contáctanos a través de nuestro formulario de contacto en nuestro sitio web.",
+    "law": "Esta política de cookies se rige por las leyes de España, y cualquier disputa que surja de ella se resolverá mediante arbitraje vinculante de acuerdo con las Reglas de Arbitraje Comercial Internacional de España."
+  }
+}

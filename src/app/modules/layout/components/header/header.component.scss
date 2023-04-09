@@ -1,10 +1,9 @@
 .primary-toolbar {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    min-width: 480px;
-  }
-  
-  .toolbar-title {
-    font-size: x-large;
-  }
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.toolbar-title {
+  font-size: x-large;
+  font-family: ArchitectsDaughter, Roboto, "Helvetica Neue", sans-serif;
+}

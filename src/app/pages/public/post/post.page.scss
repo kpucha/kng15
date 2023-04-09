@@ -1,0 +1,23 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 0px;
+  height: 100%;
+}
+.grid-child-secondary {
+  border-left: 1px solid #c3c3c3c3;
+}
+.post-content {
+  height: 100%;
+  overflow: auto;
+  padding: 1em;
+}
+.grid-child {
+  overflow: auto;
+  padding: 1em;
+  padding-top: 0;
+}
+
+.post-card {
+  height: calc(100% - 1.5em);
+}

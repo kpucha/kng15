@@ -9,7 +9,6 @@ import {
 @Component({
   selector: 'kng-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
   faLinkedin = faLinkedin;

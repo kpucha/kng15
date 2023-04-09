@@ -1,7 +1,8 @@
 <header class="primary-toolbar">
   <mat-toolbar>
     <kng-menu-button></kng-menu-button>
-    <span class="toolbar-title">kpucha.dev</span>
+    <button mat-button [routerLink]="['/']" class="toolbar-title" aria-label="title-button"
+      title="Kpucha.dev">kpucha.dev</button>
     <span class="fill-remaining-space"></span>
     <kng-nav-tabs *ngIf="layoutSize.isL || layoutSize.isXL || layoutSize.isXXL" position="header"></kng-nav-tabs>
     <span class="fill-remaining-space"></span>

@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { LoginButtonComponent } from './components/login-button/login-button.component';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
+import { SignComponent } from './components/sign/sign.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [LoginButtonComponent],
-  imports: [CommonModule, SharedModule],
-  exports: [LoginButtonComponent],
+  declarations: [SignComponent],
+  imports: [CommonModule, SharedModule, TranslateModule],
+  exports: [SignComponent],
 })
 export class AuthModule {}
