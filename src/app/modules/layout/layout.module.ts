@@ -2,6 +2,7 @@ import { AuthModule } from '../auth/auth.module';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { MaterialModule } from 'src/app/v2/material/material.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
@@ -22,6 +23,7 @@ import { TranslateModule } from '@ngx-translate/core';
     SharedModule,
     AuthModule,
     RouterModule,
+    MaterialModule,
   ],
   exports: [
     HeaderComponent,

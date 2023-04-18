@@ -4,17 +4,8 @@
   grid-gap: 0px;
   height: 100%;
 }
-.post-content {
-  height: 100%;
-  overflow: auto;
-  padding: 1em;
-}
 .grid-child {
   overflow: auto;
   padding: 1em;
   padding-top: 0;
-}
-
-.post-card {
-  height: calc(100% - 1.5em);
 }

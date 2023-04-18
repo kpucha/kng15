@@ -1,16 +1,19 @@
 <mat-card class="post-card">
     <mat-card-header>
         <mat-icon mat-card-avatar>person_add</mat-icon>
-        <mat-card-title>{{post.title}}</mat-card-title>
-        <mat-card-subtitle>{{post.tags}}</mat-card-subtitle>
+        <mat-card-title>{{post ? post.title : ''}}</mat-card-title>
+        <mat-card-subtitle>{{post ?post.tags: ''}}</mat-card-subtitle>
         <span class="fill-remaining-space"></span>
         <button mat-button>SHARE</button>
     </mat-card-header>
     <mat-card-content class="post-content">
         <div class="grid-container">
-            <div class="grid-child" innerHTML="{{post.content}}"></div>
             <div class="grid-child">
-                <kng-post-info-card></kng-post-info-card>
+                <markdown lineNumbers [data]="previewContent" [disableSanitizer]="true">
+                </markdown>
+            </div>
+            <div class="grid-child">
+                <!-- <kng-post-info-card></kng-post-info-card> -->
                 <kng-ads-horizontal></kng-ads-horizontal>
             </div>
         </div>

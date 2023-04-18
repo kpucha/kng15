@@ -1,0 +1,11 @@
+.kng-editor-md {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 0px;
+  height: 50vh;
+}
+.kng-editor-block {
+  overflow: auto;
+  padding: 1em;
+  padding-top: 0;
+}

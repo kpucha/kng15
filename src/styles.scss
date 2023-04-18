@@ -58,7 +58,7 @@ body {
 }
 body {
   margin: 0;
-  font-family: ArchitectsDaughter, Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 .fill-remaining-space {
   flex: 1 1 auto;
@@ -71,10 +71,14 @@ button {
     margin: auto !important;
   }
 }
+.mat-mdc-input-element {
+  // height: 3em !important;
+  //margin-top: 1em !important;
+}
 .fit-sidenav {
-  height: calc(100vh - 70px);
-  min-height: calc(100vh - 70px);
-  max-height: calc(100vh - 70px);
+  height: calc(100vh - 96px);
+  min-height: calc(100vh - 96px);
+  max-height: calc(100vh - 96px);
 }
 .sidenav-menu {
   width: 20em;
@@ -113,4 +117,37 @@ button {
     display: block;
     margin: 0 auto;
   }
+}
+.w100 {
+  width: 100%;
+}
+.mat-mdc-card-header-text {
+  width: 100%;
+}
+.mdc-evolution-chip-set__chips {
+  margin-left: 2em;
+}
+ngx-markdown-editor {
+  min-height: 100px;
+  max-height: 500px;
+}
+.hidden {
+  display: none;
+}
+.btn-group {
+  display: inline-flex;
+}
+
+.post-card {
+  height: calc(100% - 1.5em);
+}
+.post-content {
+  height: 100%;
+  overflow: auto;
+  padding: 1em;
+}
+.sticky-post-editor {
+  position: sticky !important;
+  top: 240 !important;
+  z-index: 1.1 !important;
 }

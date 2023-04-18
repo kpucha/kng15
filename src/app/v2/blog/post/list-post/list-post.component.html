@@ -1,0 +1,8 @@
+<section>
+    <h1>Posts</h1>
+    <ul>
+        <li *ngFor="let post of posts$ | async">
+            {{post | json}}
+        </li>
+    </ul>
+</section>

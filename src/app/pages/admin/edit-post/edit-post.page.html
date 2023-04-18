@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            CREATE POST
+        </mat-card-title>
+        <mat-card-subtitle>
+            POST ID: {{titleControl.value}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field class="w100" color="accent">
+            <mat-label>Titulo</mat-label>
+            <input matInput placeholder="New Title" [formControl]="titleControl">
+            <mat-hint>Slug: /{{getSlug(titleControl.value)}}</mat-hint>
+        </mat-form-field>
+        <mat-form-field class="w100" color="accent">
+            <mat-label>Tags</mat-label>
+            <mat-chip-grid #chipGrid aria-label="Enter tag" [formControl]="tagControl">
+                <ng-container *ngIf="keywords">
+                    <mat-chip-row *ngFor="let keyword of keywords" (removed)="removeKeyword(keyword)">
+                        {{keyword}}
+                        <button matChipRemove aria-label="'remove ' + keyword">
+                            <mat-icon>cancel</mat-icon>
+                        </button>
+                    </mat-chip-row>
+                </ng-container>
+            </mat-chip-grid>
+            <input matInput placeholder="New tag..." [matChipInputFor]="chipGrid"
+                (matChipInputTokenEnd)="add($event)" />
+        </mat-form-field>
+        <angular-markdown-editor textareaId="editor1" [rows]="12" name="markdownText" [formControl]="contentControl"
+            [options]="editorOptions">
+        </angular-markdown-editor>
+        <markdown [data]="previewContent" [disableSanitizer]="true">
+        </markdown>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button color="warn">GUARDAR BORRADOR</button>
+        <button mat-button color="accent">PUBLICAR</button>
+    </mat-card-actions>
+</mat-card>

@@ -1,0 +1,54 @@
+<mat-card class="post-card">
+    <mat-card-header>
+        <mat-card-title>
+            CREATE POST
+        </mat-card-title>
+        <mat-card-subtitle>
+            Slug: /{{getSlug(_title.value)}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="post-content">
+        <mat-form-field class="w100" color="accent">
+            <mat-label>Tipo</mat-label>
+            <mat-select>
+                <mat-option value="A">A</mat-option>
+                <mat-option value="B">B</mat-option>
+                <mat-option value="C">C</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="w100" color="accent">
+            <mat-label>Titulo</mat-label>
+            <input matInput placeholder="New Title" [formControl]="_title">
+        </mat-form-field>
+        <mat-form-field class="tag-form-field w100" color="accent">
+            <mat-label>Tags</mat-label>
+            <mat-chip-grid #chipGrid aria-label="Enter tag" [formControl]="_tags">
+                <ng-container *ngIf="keywords">
+                    <mat-chip-row *ngFor="let keyword of keywords" (removed)="removeKeyword(keyword)">
+                        {{keyword}}
+                        <button matChipRemove aria-label="'remove ' + keyword">
+                            <mat-icon>cancel</mat-icon>
+                        </button>
+                    </mat-chip-row>
+                </ng-container>
+            </mat-chip-grid>
+            <input matInput placeholder="New tag..." [matChipInputFor]="chipGrid"
+                (matChipInputTokenEnd)="add($event)" />
+        </mat-form-field>
+        <div class="kng-editor-md">
+            <div class="kng-editor-block">
+                <angular-markdown-editor matInput textareaId="editor1" [rows]="12" name="markdownText"
+                    [formControl]="_content" [options]="editorOptions">
+                </angular-markdown-editor>
+            </div>
+            <div class="kng-editor-block">
+                <markdown [data]="previewContent" [disableSanitizer]="true">
+                </markdown>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button color="warn" (click)="submit()">GUARDAR BORRADOR</button>
+        <button mat-button color="accent">PUBLICAR</button>
+    </mat-card-actions>
+</mat-card>

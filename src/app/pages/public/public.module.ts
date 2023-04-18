@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GitgraphCvComponent } from './about/components/gitgraph-cv/gitgraph-cv.component';
 import { HomePage } from './home/home.page';
 import { LayoutModule } from '../../modules/layout/layout.module';
+import { MaterialModule } from 'src/app/v2/material/material.module';
 import { NgModule } from '@angular/core';
 import { PostPage } from './post/post.page';
 import { PrivacyPolicyPage } from './privacy-policy/privacy-policy.page';
@@ -42,6 +43,7 @@ import { WorkHistComponent } from './about/components/work-hist/work-hist.compon
     SharedModule,
     TranslateModule.forChild(),
     FontAwesomeModule,
+    MaterialModule,
   ],
 })
 export class PublicModule {}

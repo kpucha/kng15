@@ -1,6 +1,10 @@
 .primary-footer {
-  font-size: medium;
-  height: 15px;
+  font-size: small !important;
+  height: 32px !important;
+  .mat-toolbar {
+    font-size: small !important;
+    height: 32px !important;
+  }
 }
 a {
   text-decoration: none;
