@@ -4,8 +4,24 @@
   grid-gap: 0px;
   height: 50vh;
 }
+
 .kng-editor-block {
   overflow: auto;
   padding: 1em;
   padding-top: 0;
+}
+
+// .kng-form-1-5 {
+//   display: grid;
+//   grid-template-columns: 1fr 5fr;
+//   grid-gap: 1em;
+// }
+.kng-form {
+  display: grid;
+  grid-gap: 1em;
+
+  &--1-5 {
+    @extend .kng-form;
+    grid-template-columns: 1fr 5fr;
+  }
 }

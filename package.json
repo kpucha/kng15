@@ -11,6 +11,7 @@
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json --hideGenerator --theme material --unitTestCoverage ./coverage/coverage-summary.json  -s",
     "compodoc:serve": "compodoc -s"
   },
+  "serviceWorker": true,
   "private": true,
   "dependencies": {
     "@angular/animations": "^15.2.0",

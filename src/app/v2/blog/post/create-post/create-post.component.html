@@ -8,18 +8,27 @@
         </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content class="post-content">
-        <mat-form-field class="w100" color="accent">
-            <mat-label>Tipo</mat-label>
-            <mat-select>
-                <mat-option value="A">A</mat-option>
-                <mat-option value="B">B</mat-option>
-                <mat-option value="C">C</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field class="w100" color="accent">
-            <mat-label>Titulo</mat-label>
-            <input matInput placeholder="New Title" [formControl]="_title">
-        </mat-form-field>
+        <div class="kng-form--9-3-6">
+            <!-- <div class="kng-form-block"> -->
+            <!--type-->
+            <mat-form-field class="w100" color="accent">
+                <mat-label>Tipo</mat-label>
+                <mat-select>
+                    <mat-option value="A">A</mat-option>
+                    <mat-option value="B">B</mat-option>
+                    <mat-option value="C">C</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <!-- </div>
+            <div class="kng-form-block"> -->
+            <!--title-->
+            <mat-form-field class="w100" color="accent">
+                <mat-label>Titulo</mat-label>
+                <input matInput placeholder="New Title" [formControl]="_title">
+            </mat-form-field>
+            <!-- </div> -->
+        </div>
+        <!--tag-->
         <mat-form-field class="tag-form-field w100" color="accent">
             <mat-label>Tags</mat-label>
             <mat-chip-grid #chipGrid aria-label="Enter tag" [formControl]="_tags">
@@ -37,11 +46,13 @@
         </mat-form-field>
         <div class="kng-editor-md">
             <div class="kng-editor-block">
+                <!-- editor -->
                 <angular-markdown-editor matInput textareaId="editor1" [rows]="12" name="markdownText"
                     [formControl]="_content" [options]="editorOptions">
                 </angular-markdown-editor>
             </div>
             <div class="kng-editor-block">
+                <!-- preview -->
                 <markdown [data]="previewContent" [disableSanitizer]="true">
                 </markdown>
             </div>

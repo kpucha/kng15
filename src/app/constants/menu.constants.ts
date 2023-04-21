@@ -2,11 +2,11 @@ import { Menu } from '../interfaces/menu.interface';
 
 export class MENU {
   public static PUBLIC: Menu[] = [
-    {
-      name: 'Blog',
-      url: '/blog',
-      icon: 'menu_book',
-    },
+    // {
+    //   name: 'Blog',
+    //   url: '/blog',
+    //   icon: 'menu_book',
+    // },
     // {
     //   name: 'Tools',
     //   url: '/tools',
