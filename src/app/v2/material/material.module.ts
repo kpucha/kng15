@@ -10,14 +10,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgModule } from '@angular/core';
-import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   imports: [
@@ -40,6 +41,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    MatPaginatorModule,
   ],
   exports: [
     CommonModule,
@@ -61,6 +63,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatChipsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatPaginatorModule,
   ],
 })
 export class MaterialModule {}

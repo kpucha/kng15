@@ -4,27 +4,27 @@
             CREATE POST
         </mat-card-title>
         <mat-card-subtitle>
-            Slug: /{{getSlug(_title.value)}}
+            Slug: /{{_slug.value}}
         </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content class="post-content">
-        <div class="kng-form--9-3-6">
+        <div class="kng-form--1-5">
             <!-- <div class="kng-form-block"> -->
             <!--type-->
             <mat-form-field class="w100" color="accent">
                 <mat-label>Tipo</mat-label>
-                <mat-select>
-                    <mat-option value="A">A</mat-option>
-                    <mat-option value="B">B</mat-option>
-                    <mat-option value="C">C</mat-option>
+                <mat-select [formControl]="_type">
+                    <mat-option *ngFor="let typeKey of typeKeys" [value]="typeKey">{{typeKey}}</mat-option>
                 </mat-select>
+                <mat-error *ngIf="_type.invalid">{{ _type.errors | json }}</mat-error>
             </mat-form-field>
             <!-- </div>
             <div class="kng-form-block"> -->
             <!--title-->
             <mat-form-field class="w100" color="accent">
-                <mat-label>Titulo</mat-label>
+                <mat-label>Titulo </mat-label>
                 <input matInput placeholder="New Title" [formControl]="_title">
+                <mat-error *ngIf="_title.invalid">{{ _title.errors | json }}</mat-error>
             </mat-form-field>
             <!-- </div> -->
         </div>
@@ -32,17 +32,18 @@
         <mat-form-field class="tag-form-field w100" color="accent">
             <mat-label>Tags</mat-label>
             <mat-chip-grid #chipGrid aria-label="Enter tag" [formControl]="_tags">
-                <ng-container *ngIf="keywords">
-                    <mat-chip-row *ngFor="let keyword of keywords" (removed)="removeKeyword(keyword)">
-                        {{keyword}}
-                        <button matChipRemove aria-label="'remove ' + keyword">
+                <ng-container *ngIf="tagsList">
+                    <mat-chip-row *ngFor="let tag of tagsList" (removed)="removeTag(tag)">
+                        {{tag}}
+                        <button matChipRemove aria-label="'remove ' + tag">
                             <mat-icon>cancel</mat-icon>
                         </button>
                     </mat-chip-row>
                 </ng-container>
             </mat-chip-grid>
             <input matInput placeholder="New tag..." [matChipInputFor]="chipGrid"
-                (matChipInputTokenEnd)="add($event)" />
+                (matChipInputTokenEnd)="addTag($event)" />
+            <mat-error *ngIf="_tags.invalid">{{ _tags.errors | json }}</mat-error>
         </mat-form-field>
         <div class="kng-editor-md">
             <div class="kng-editor-block">
@@ -50,6 +51,7 @@
                 <angular-markdown-editor matInput textareaId="editor1" [rows]="12" name="markdownText"
                     [formControl]="_content" [options]="editorOptions">
                 </angular-markdown-editor>
+                <mat-error *ngIf="_content.invalid">{{ _content.errors | json }}</mat-error>
             </div>
             <div class="kng-editor-block">
                 <!-- preview -->
@@ -58,8 +60,10 @@
             </div>
         </div>
     </mat-card-content>
-    <mat-card-actions>
-        <button mat-button color="warn" (click)="submit()">GUARDAR BORRADOR</button>
-        <button mat-button color="accent">PUBLICAR</button>
+    <mat-card-actions align="end">
+        <button mat-button color="warn" (click)="tryRedirect()">PUBLICAR</button>
+        <button mat-button color="warn" [disabled]="createPostForm.invalid" (click)="submit()">PUBLICAR</button>
+        <button mat-button color="accent" [disabled]="createPostForm.invalid" (click)="submit(true)">GUARDAR
+            BORRADOR</button>
     </mat-card-actions>
 </mat-card>

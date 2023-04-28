@@ -21,6 +21,6 @@ export class PostPage implements OnInit {
   }
 
   getPost(): Post {
-    return POST.MOCK_POST;
+    return {} as Post;
   }
 }

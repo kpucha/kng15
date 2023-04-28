@@ -1,52 +1,72 @@
-import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/modules/auth/auth.service';
+import { CreatePostForm, Post } from './post.interface';
+import { FirebaseApp } from '@angular/fire/app';
 import { inject, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { POST } from './post.constants';
-import { Post } from './post.interface';
+import { Router } from '@angular/router';
+import { serverTimestamp } from '@firebase/firestore';
 import {
   collection,
   collectionData,
   CollectionReference,
   DocumentData,
-  FieldPath,
   Firestore,
-  onSnapshot,
   Query,
   query,
-  QuerySnapshot,
   where,
-  WhereFilterOp,
+  doc,
+  setDoc,
+  addDoc,
 } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostService {
-  private firestore: Firestore = inject(Firestore);
-  private postCollection: CollectionReference<DocumentData> = collection(
-    this.firestore,
-    POST.FIRESTORE_COLLECTION
-  );
+  private postCollection: CollectionReference<DocumentData>;
+  private draftCollection: CollectionReference<DocumentData>;
 
-  constructor() {}
+  constructor(
+    private firestore: Firestore,
+    private authService: AuthService,
+    private router: Router
+  ) {
+    this.postCollection = collection(this.firestore, POST.FIRESTORE_COLLECTION);
+    this.draftCollection = collection(
+      this.firestore,
+      POST.FIRESTORE_DRAFT_COLLECTION
+    );
+  }
 
-  /**
-   *
-   *  CREATE
-   *
-   */
+  goToPost() {
+    this.router.navigate(['/v2/blog/']);
+  }
 
-  /**
-   *
-   *  READ
-   *
-   */
+  submitDraft(createPostForm: CreatePostForm): void {
+    let draft: Post = this.generateDraft(createPostForm);
+    this.insertPost(draft, true);
+  }
+
+  submitPost(createPostForm: CreatePostForm): void {
+    let draft: Post = this.generateDraft(createPostForm);
+    this.insertPost(draft, true)
+      .catch((e) => console.error('Error creando draft del post'))
+      .then(() => {
+        this.insertPost(draft, false)
+          .catch((e) => console.error('Error creando post', draft))
+          .then(() => {
+            this.router.navigate(['/v2/blog/' + draft.slug]);
+          });
+      });
+  }
+
   getPostList(): Observable<Post[]> {
     return collectionData(this.postCollection) as Observable<Post[]>;
   }
 
   getPostBySlug(slug: string): Observable<Post[]> {
-    if (slug.trim() == '') throw new Error('EL SLUG NO PUEDE ESTAR VACÍO');
+    if (slug.trim() == '') throw new Error('SLUG REQUIRED');
     const slugQuery: Query<DocumentData> = query(
       this.postCollection,
       where('slug', '==', slug)
@@ -54,15 +74,32 @@ export class PostService {
     return collectionData(slugQuery) as Observable<Post[]>;
   }
 
-  /**
-   *
-   *  UPDATE
-   *
-   */
+  getSlug(title: string | null): string {
+    if (title == null) return '';
+    return title.replaceAll(' ', '-').toLowerCase().trim();
+  }
 
-  /**
-   *
-   *  DELETE  * POR AHORA LOS POST SOLO SE ELIMINAN A MANO
-   *
-   */
+  private generateDraft(createPostForm: CreatePostForm): Post {
+    let newRef = doc(this.draftCollection);
+    let newPost: Post = {
+      id: newRef.id,
+      type: createPostForm.type,
+      creationDate: serverTimestamp(),
+      updateDate: serverTimestamp(),
+      author: this.authService.userLogged.uid,
+      title: createPostForm.title,
+      slug: this.getSlug(createPostForm.title),
+      tags: createPostForm.tags,
+      content: createPostForm.content,
+    };
+    return newPost;
+  }
+
+  private insertPost(post: Post, isDraft?: boolean) {
+    let fsCollection = isDraft
+      ? POST.FIRESTORE_DRAFT_COLLECTION
+      : POST.FIRESTORE_COLLECTION;
+    let postRef = doc(this.firestore, fsCollection, post.id);
+    return setDoc(postRef, post);
+  }
 }

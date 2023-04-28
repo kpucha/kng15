@@ -1,51 +1,40 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @use "@angular/material" as mat;
-// Plus imports for other components in your app.
 @import "assets/theme/constants";
 @import "assets/theme/forms";
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
 @include mat.core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
+$mat-typography: mat.define-typography-config();
+
 $primary-light-on: mat.define-palette(mat.$grey-palette, 100, 50, 400);
 $accent-light-on: mat.define-palette(mat.$light-blue-palette);
 $warn-light-on: mat.define-palette(mat.$deep-orange-palette, A200);
-$theme-light-on: mat.define-light-theme(
-  (
-    color: (
-      primary: $primary-light-on,
-      accent: $accent-light-on,
-      warn: $warn-light-on,
-    ),
-  )
-);
+$theme-light-on: mat.define-light-theme((color: (primary: $primary-light-on,
+        accent: $accent-light-on,
+        warn: $warn-light-on,
+      ),
+      typography: $mat-typography,
+    ));
 
 $primary-light-off: mat.define-palette(mat.$grey-palette, 900, 800, 900);
 $accent-light-off: mat.define-palette(mat.$light-blue-palette);
 $warn-light-off: mat.define-palette(mat.$deep-orange-palette);
 $custom-background-color: #15202b;
-$theme-light-off: mat.define-dark-theme(
-  (
-    color: (
-      primary: $primary-light-off,
-      accent: $accent-light-off,
-      warn: $warn-light-off,
-    ),
-  )
-);
+$theme-light-off: mat.define-dark-theme((color: (primary: $primary-light-off,
+        accent: $accent-light-off,
+        warn: $warn-light-off,
+      ), typography: $mat-typography ));
 
 .light-on {
-  @include mat.all-component-colors($theme-light-on);
+  @include mat.all-component-themes($theme-light-on);
+  @include mat.all-component-typographies($mat-typography);
+  @include mat.typography-hierarchy($mat-typography)
 }
 
 .light-off {
-  @include mat.all-component-colors($theme-light-off);
+  @include mat.all-component-themes($theme-light-off);
+  @include mat.all-component-typographies($mat-typography);
+  @include mat.typography-hierarchy($mat-typography)
 }
 
 @font-face {
@@ -57,36 +46,44 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
 .fill-remaining-space {
   flex: 1 1 auto;
 }
+
 .material-symbols-outlined {
   margin: 0.25em;
 }
+
 button {
   .mat-icon {
     margin: auto !important;
   }
 }
+
 .mat-mdc-input-element {
   // height: 3em !important;
   //margin-top: 1em !important;
 }
+
 .fit-sidenav {
   height: calc(100vh - 96px);
   min-height: calc(100vh - 96px);
   max-height: calc(100vh - 96px);
 }
+
 .sidenav-menu {
   width: 20em;
   display: flex !important;
   align-items: center;
   justify-content: center;
 }
+
 .sidenav-content {
   height: 100%;
 }
@@ -96,45 +93,57 @@ button {
   width: 5px;
   background: $primary-color;
 }
+
 *::-webkit-scrollbar-thumb {
   background: $accent-color;
   width: 5px;
 }
+
 .mdc-data-table__row {
   height: inherit !important;
 }
+
 .mat-mdc-card {
   margin: 0.5em;
 }
+
 .pointer {
   cursor: pointer;
 }
+
 .list-icons-card-content {
   position: relative;
   display: flex !important;
   flex-direction: row;
   flex-wrap: wrap;
+
   .mdc-icon-button {
     display: block;
     margin: 0 auto;
   }
 }
+
 .w100 {
   width: 100%;
 }
+
 .mat-mdc-card-header-text {
   width: 100%;
 }
+
 .mdc-evolution-chip-set__chips {
   margin-left: 2em;
 }
+
 ngx-markdown-editor {
   min-height: 100px;
   max-height: 500px;
 }
+
 .hidden {
   display: none;
 }
+
 .btn-group {
   display: inline-flex;
 }
@@ -142,11 +151,14 @@ ngx-markdown-editor {
 .post-card {
   height: calc(100% - 1.5em);
 }
+
 .post-content {
-  height: 100%;
+  height: calc(100% - 3em);
   overflow: auto;
-  padding: 1em;
+  padding: 1em !important;
 }
+
+
 .sticky-post-editor {
   position: sticky !important;
   top: 240 !important;

@@ -1,5 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, inject, OnInit } from '@angular/core';
+import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
+import { LayoutService } from '../../../../modules/layout/layout.service';
 import { MarkdownService } from 'ngx-markdown';
 import { Observable } from 'rxjs';
 import { Post } from '../post.interface';
@@ -17,9 +18,10 @@ import { PostService } from '../post.service';
   templateUrl: './view-post.component.html',
   styleUrls: ['./view-post.component.scss'],
 })
-export class ViewPostComponent implements OnInit {
+export class ViewPostComponent implements OnInit, AfterViewInit {
   private route: ActivatedRoute = inject(ActivatedRoute);
   private router: Router = inject(Router);
+  private layout: LayoutService = inject(LayoutService);
   private postService: PostService = inject(PostService);
   private markdownService: MarkdownService = inject(MarkdownService);
   public previewContent: string = '';
@@ -28,6 +30,10 @@ export class ViewPostComponent implements OnInit {
   post!: Post;
 
   constructor() {}
+
+  ngAfterViewInit(): void {
+    this.layout.setLoading(false);
+  }
 
   ngOnInit(): void {
     let posts$: Observable<Post[]> = this.postService.getPostBySlug(this.slug);

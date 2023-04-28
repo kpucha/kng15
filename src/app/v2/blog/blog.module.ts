@@ -8,6 +8,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { MaterialModule } from '../material/material.module';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../modules/shared/shared.module';
+import { TranslateModule } from '@ngx-translate/core';
 import { ViewPostComponent } from './post/view-post/view-post.component';
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ViewPostComponent } from './post/view-post/view-post.component';
     MaterialModule,
     AdsModule,
     SharedModule,
+    TranslateModule,
   ],
   exports: [],
 })

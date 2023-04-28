@@ -1,42 +1,82 @@
-import { Post } from './post.interface';
-import { PostType } from './post.enums';
-import { Timestamp } from 'firebase/firestore';
-
 export class POST {
   public static FIRESTORE_COLLECTION = 'posts';
+  public static FIRESTORE_DRAFT_COLLECTION = 'draft-posts';
 
-  /**
-   * DEMO POST
-   *
-   * @public
-   * @static
-   * @type {Post}
-   */
-  public static MOCK_POST: Post = {
-    id: 'keyeyeyeyey',
-    author: 'EGHs0P33EJRtFbq90BDmyZn44mu2',
-    type: PostType.note,
-    creationDate: Timestamp.fromDate(new Date()),
-    updateDate: Timestamp.fromDate(new Date()),
-    title: 'Mock Post de tipo post para pruebas',
-    slug: 'mock-post-de-tipo-post-para-pruebas',
-    tags: [
-      'tag1',
-      'tag2',
-      'tag3',
-      'tag4',
-      'tag5',
-      'tag6',
-      'tag7',
-      'tag8',
-      'tag9',
-      'tag10',
-      'tag11',
-      'tag12',
-      'tag13',
-      'tag14',
-    ],
-    content:
-      '<h2>TITULO DE CONTENIDO DE PRUEBA</h2><br/><p>Parrafo de prueba</p>',
+  public static EDITOR_BUTTON = {
+    TABLE: {
+      name: 'groupMisc',
+      data: [
+        {
+          name: 'cmdTable',
+          toggle: false,
+          title: 'Table',
+          icon: {
+            fa: 'fa fa-table',
+          },
+          callback: (e: any) => {
+            // Replace selection with some drinks
+            let chunk;
+            let cursor;
+            const selected = e.getSelection();
+            chunk =
+              '\n| Tables        | Are           | Cool  | \n' +
+              '| ------------- |:-------------:| -----:| \n' +
+              '| col 3 is      | right-aligned | $1600 | \n' +
+              '| col 2 is      | centered      |   $12 | \n' +
+              '| zebra stripes | are neat      |    $1 |';
+
+            // transform selection and set the cursor into chunked text
+            e.replaceSelection(chunk);
+            cursor = selected.start;
+
+            // Set the cursor
+            e.setSelection(cursor, cursor + chunk.length);
+          },
+        },
+      ],
+    },
+    TERMINAL: {
+      name: 'cmdTerminal',
+      data: [
+        {
+          name: 'cmdTerminal',
+          toggle: false,
+          title: 'Terminal',
+          icon: {
+            fa: 'fa fa-terminal',
+          },
+          callback: (e: any) => {
+            // Give/remove ~~ surround the selection
+            let chunk;
+            let cursor;
+            const selected = e.getSelection();
+            const content = e.getContent();
+
+            if (selected.length === 0) {
+              // Give extra word
+              chunk = e.__localize('terminal');
+            } else {
+              chunk = selected.text;
+            }
+
+            // transform selection and set the cursor into chunked text
+            if (
+              content.substr(selected.start - 1, 1) === '`' &&
+              content.substr(selected.end, 1) === '`'
+            ) {
+              e.setSelection(selected.start - 1, selected.end + 1);
+              e.replaceSelection(chunk);
+              cursor = selected.start - 1;
+            } else {
+              e.replaceSelection('`' + chunk + '`');
+              cursor = selected.start + 1;
+            }
+
+            // Set the cursor
+            e.setSelection(cursor, cursor + chunk.length);
+          },
+        },
+      ],
+    },
   };
 }
