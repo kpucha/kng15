@@ -16,8 +16,9 @@ const routes: Routes = [
       import('./pages/public/public.module').then((m) => m.PublicModule),
   },
   {
-    path: 'v2',
-    loadChildren: () => import('./v2/v2.module').then((m) => m.V2Module),
+    path: 'blog',
+    loadChildren: () =>
+      import('./v2/blog/blog.module').then((m) => m.BlogModule),
   },
   {
     path: 'admin',

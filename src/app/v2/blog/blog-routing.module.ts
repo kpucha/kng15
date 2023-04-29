@@ -1,3 +1,4 @@
+import { BlogComponent } from './blog/blog.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
 import { ListPostComponent } from './post/list-post/list-post.component';
 import { NgModule } from '@angular/core';
@@ -7,7 +8,7 @@ import { ViewPostComponent } from './post/view-post/view-post.component';
 const routes: Routes = [
   {
     path: '',
-    component: ListPostComponent,
+    component: BlogComponent,
   },
   {
     path: 'create',

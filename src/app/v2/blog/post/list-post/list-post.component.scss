@@ -1,36 +1,38 @@
-.list-post-dashboard {
+.mat-mdc-cell {
+    padding: 0.5em
+}
+
+.post-list {
+    padding: 2em;
+
+    &-title {
+        font-weight: 500;
+        font-size: large;
+
+        &-icon {
+            vertical-align: middle;
+        }
+    }
+
+    &-tags {
+        margin-left: 2em;
+        margin-top: -1em;
+    }
+}
+
+.tag-button {
+    scale: 0.8;
+    margin-top: 0.2em;
+    text-transform: uppercase;
+    align-self: start;
+}
+
+.kng-form {
     display: grid;
-    grid-template-columns: 3fr 2fr;
-    grid-gap: 0;
+    grid-gap: 1em;
 
-    &-section {
-        overflow: auto;
-        padding: 1em;
-
-        h3 {
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .mat-mdc-cell {
-            padding: 0.5em
-        }
-
-        .post-list-title {
-            font-weight: 500;
-            font-size: large;
-
-            &-icon {
-                vertical-align: middle;
-            }
-        }
-
-
-        .tag-button {
-            scale: 0.8;
-            margin-top: 0.2em;
-            text-transform: uppercase;
-            align-self: start;
-        }
+    &--1-5-3 {
+        @extend .kng-form;
+        grid-template-columns: 1fr 5fr 3fr;
     }
 }

@@ -7,8 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --no-watch",
-    "compodoc:build": "compodoc -p tsconfig.doc.json --hideGenerator --theme material --unitTestCoverage ./coverage/coverage-summary.json -s",
-    "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json --hideGenerator --theme material --unitTestCoverage ./coverage/coverage-summary.json  -s",
+    "compodoc:build": "compodoc -p tsconfig.doc.json",
+    "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
     "compodoc:serve": "compodoc -s"
   },
   "serviceWorker": true,

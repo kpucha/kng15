@@ -1,7 +1,13 @@
-import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { LayoutService } from './modules/layout/layout.service';
 import { LayoutSize } from './interfaces/layout-size.interface';
 import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
+import { PwaService } from './modules/pwa/services/pwa.service';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 
 /**
  * Description
@@ -19,7 +25,7 @@ import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
     { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: { disabled: true } },
   ],
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent implements OnInit, OnDestroy {
   /**
    * Description
    *
@@ -35,13 +41,17 @@ export class AppComponent implements OnDestroy {
    * @constructor
    * @param {LayoutService} layout
    */
-  constructor(public layout: LayoutService) {
+  constructor(public layout: LayoutService, private pwa: PwaService) {
     this.layoutSize = layout.currentLayoutSize;
     this.sidenavOpened = layout.isSidenavOpen;
     this.isLoading = layout.isLoading;
-    layout.sizeChange.subscribe((s) => (this.layoutSize = s));
-    layout.sidenavChange.subscribe((o) => (this.sidenavOpened = o));
-    layout.loadingChange.subscribe((l) => (this.isLoading = l));
+  }
+
+  ngOnInit(): void {
+    this.layout.sizeChange.subscribe((s) => (this.layoutSize = s));
+    this.layout.sidenavChange.subscribe((o) => (this.sidenavOpened = o));
+    this.layout.loadingChange.subscribe((l) => (this.isLoading = l));
+    this.pwa.checkForUpdate();
   }
 
   ngOnDestroy(): void {

@@ -15,8 +15,6 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'prefix' },
   { path: 'about', component: AboutPage },
-  { path: 'blog', component: BlogPage },
-  { path: 'blog/:slug', component: PostPage },
   { path: 'home', component: HomePage },
   { path: 'privacy-policy', component: PrivacyPolicyPage },
   { path: 'cookies-policy', component: CookiesPolicyPage },

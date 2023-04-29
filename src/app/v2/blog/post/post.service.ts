@@ -76,7 +76,12 @@ export class PostService {
 
   getSlug(title: string | null): string {
     if (title == null) return '';
-    return title.replaceAll(' ', '-').toLowerCase().trim();
+    return title
+      .replaceAll(' ', '-')
+      .toLowerCase()
+      .trim()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
   }
 
   private generateDraft(createPostForm: CreatePostForm): Post {

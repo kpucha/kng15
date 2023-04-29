@@ -21,7 +21,6 @@ import { PostService } from '../post.service';
 export class ViewPostComponent implements OnInit, AfterViewInit {
   private route: ActivatedRoute = inject(ActivatedRoute);
   private router: Router = inject(Router);
-  private layout: LayoutService = inject(LayoutService);
   private postService: PostService = inject(PostService);
   private markdownService: MarkdownService = inject(MarkdownService);
   public previewContent: string = '';
@@ -29,7 +28,7 @@ export class ViewPostComponent implements OnInit, AfterViewInit {
   private slug: string = this.route.snapshot.paramMap.get('slug')!;
   post!: Post;
 
-  constructor() {}
+  constructor(private layout: LayoutService) {}
 
   ngAfterViewInit(): void {
     this.layout.setLoading(false);

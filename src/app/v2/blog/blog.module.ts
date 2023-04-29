@@ -10,6 +10,7 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '../../modules/shared/shared.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { ViewPostComponent } from './post/view-post/view-post.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ViewPostComponent } from './post/view-post/view-post.component';
     ViewPostComponent,
     ListPostComponent,
     EditPostComponent,
+    BlogComponent,
   ],
   imports: [
     CommonModule,
