@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getAnalytics, provideAnalytics } from '@angular/fire/analytics';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { HttpBackend, HttpClientModule } from '@angular/common/http';
@@ -19,13 +20,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { SharedModule } from './modules/shared/shared.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { V2Module } from './v2/v2.module';
-
-import {
-  provideAnalytics,
-  getAnalytics,
-  ScreenTrackingService,
-  UserTrackingService,
-} from '@angular/fire/analytics';
 
 /**
  * Description
@@ -68,8 +62,6 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
     }),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
     provideFirebaseApp(() => initializeApp(environment.firebase)),

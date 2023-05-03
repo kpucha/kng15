@@ -4,8 +4,13 @@
   grid-gap: 0px;
   height: 100%;
 }
+
 .grid-child {
   overflow: auto;
   padding: 1em;
   padding-top: 0;
+}
+
+.post-card-wrapper {
+  margin: 1em 300px;
 }

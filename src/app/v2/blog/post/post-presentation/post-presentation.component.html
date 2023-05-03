@@ -1,0 +1,9 @@
+<span class="post-list-title">
+    <mat-icon class="post-list-title-icon">{{type}}</mat-icon>
+    {{title}}
+</span>
+<br />
+<div class="post-list-tags">
+    <button class="tag-button" mat-button *ngFor="let tag of tags; index as i" color="accent"
+        (click)="$event.stopPropagation()">#{{tag}}</button>
+</div>

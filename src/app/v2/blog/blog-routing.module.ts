@@ -1,5 +1,7 @@
 import { BlogComponent } from './blog/blog.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
+import { EditPostComponent } from './post/edit-post/edit-post.component';
+import { IsAdminGuard } from 'src/app/modules/auth/guards/is-admin.guard';
 import { ListPostComponent } from './post/list-post/list-post.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -12,11 +14,18 @@ const routes: Routes = [
   },
   {
     path: 'create',
+    canActivate: [IsAdminGuard],
     component: CreatePostComponent,
   },
   {
-    path: ':slug',
+    path: 'edit/:id',
+    canActivate: [IsAdminGuard],
+    component: EditPostComponent,
+  },
+  {
+    path: 'post/:slug',
     component: ViewPostComponent,
+    runGuardsAndResolvers: 'always',
   },
 ];
 

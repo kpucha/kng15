@@ -1,3 +1,4 @@
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { collection, collectionData, Firestore } from '@angular/fire/firestore';
 import { CommonModule } from '@angular/common';
 import { Component, inject, Input, OnInit, ViewChild } from '@angular/core';
@@ -33,7 +34,11 @@ export class ListPostComponent implements OnInit {
   dataSource = new MatTableDataSource(this.postsList);
   displayedColumns: string[] = ['title'];
 
-  constructor(private layout: LayoutService) {
+  constructor(
+    private layout: LayoutService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
     this.typeKeys = Object.keys(PostType);
   }
   _type = new FormControl('');
@@ -81,7 +86,12 @@ export class ListPostComponent implements OnInit {
     this.availableTags = Object.keys(uniqueTags);
   }
 
-  view(id: string) {
-    //TODO go to the post url passing the post to the component
+  viewPost(slug: string) {
+    this.router
+      .navigate(['/blog/post/' + slug])
+      .then(() => window.location.reload());
+  }
+  viewTag(tag: string) {
+    alert('VER TAG ' + tag);
   }
 }

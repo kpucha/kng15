@@ -42,9 +42,67 @@ $theme-light-off: mat.define-dark-theme((color: (primary: $primary-light-off,
   src: url("assets/fonts/ArchitectsDaughter-Regular.ttf") format("truetype");
 }
 
+a:link {
+  color: #03a9f4;
+}
+
+a:visited {
+  color: #03a9f4;
+}
+
+a:visited:hover {
+  color: #03a9f4;
+}
+
+a:hover {
+  color: #03a9f4;
+}
+
+a:active {
+  color: #03a9f4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500 !important;
+}
+
 html,
 body {
   height: 100%;
+}
+
+blockquote {
+  padding: 0.5em 1em;
+  background-color: #03a9f430;
+  border-radius: 9px;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 10;
+    height: 10;
+    border-bottom: 18px solid transparent;
+    border-right: 20px solid #03a9f430;
+    border-left: 18px solid transparent;
+    border-top: 18px solid transparent;
+    margin: 9px 0 0 -54px;
+  }
+}
+
+ul {
+  line-height: 1.5em;
+}
+
+code {
+  padding: 0.25em 0.5em;
+  background-color: #03a9f430;
+  border-radius: 4px;
 }
 
 body {

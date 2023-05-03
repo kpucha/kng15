@@ -1,25 +1,18 @@
-<mat-card class="post-card">
+<mat-card class="post-card-wrapper">
     <mat-card-header>
-        <mat-icon mat-card-avatar>person_add</mat-icon>
-        <mat-card-title>{{post ? post.title : ''}}</mat-card-title>
-        <mat-card-subtitle>{{post ?post.tags: ''}}</mat-card-subtitle>
+        <mat-card-title>
+            <kng-post-presentation [type]="post.type" [title]="post.title" [tags]="post.tags">
+            </kng-post-presentation>
+        </mat-card-title>
         <span class="fill-remaining-space"></span>
-        <button mat-button>SHARE</button>
+        <!-- <button mat-button>SHARE</button> -->
     </mat-card-header>
     <mat-card-content class="post-content">
-        <div class="grid-container">
-            <div class="grid-child">
-                <markdown lineNumbers [data]="previewContent" [disableSanitizer]="true">
-                </markdown>
-            </div>
-            <div class="grid-child">
-                <!-- <kng-post-info-card></kng-post-info-card> -->
-                <kng-ads-horizontal></kng-ads-horizontal>
-            </div>
-        </div>
+        <markdown lineNumbers [data]="previewContent" [disableSanitizer]="true">
+        </markdown>
     </mat-card-content>
-    <mat-card-actions align="end">
+    <!-- <mat-card-actions align="end">
         <button mat-button>LIKE</button>
         <button mat-button>SHARE</button>
-    </mat-card-actions>
+    </mat-card-actions> -->
 </mat-card>

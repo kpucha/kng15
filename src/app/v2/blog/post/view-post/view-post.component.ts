@@ -1,10 +1,16 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
 import { LayoutService } from '../../../../modules/layout/layout.service';
 import { MarkdownService } from 'ngx-markdown';
 import { Observable } from 'rxjs';
 import { Post } from '../post.interface';
 import { PostService } from '../post.service';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 
 /**
  * Retrieve & show a Post document from Firestore by a given slug
@@ -19,26 +25,34 @@ import { PostService } from '../post.service';
   styleUrls: ['./view-post.component.scss'],
 })
 export class ViewPostComponent implements OnInit, AfterViewInit {
-  private route: ActivatedRoute = inject(ActivatedRoute);
-  private router: Router = inject(Router);
-  private postService: PostService = inject(PostService);
   private markdownService: MarkdownService = inject(MarkdownService);
   public previewContent: string = '';
 
-  private slug: string = this.route.snapshot.paramMap.get('slug')!;
+  slug!: string;
   post!: Post;
+  posts$!: Observable<Post[]>;
 
-  constructor(private layout: LayoutService) {}
+  constructor(
+    private layout: LayoutService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private postService: PostService
+  ) {
+    this.route.params.subscribe((newParams) => {
+      this.slug = newParams['slug'];
+      this.posts$ = this.postService.getPostBySlug(this.slug);
+      this.posts$.subscribe((posts: Post[]) => {
+        this.validatePost(posts);
+      });
+    });
+  }
 
   ngAfterViewInit(): void {
     this.layout.setLoading(false);
   }
 
   ngOnInit(): void {
-    let posts$: Observable<Post[]> = this.postService.getPostBySlug(this.slug);
-    posts$.subscribe((posts: Post[]) => {
-      this.validatePost(posts);
-    });
+    this.layout.setActiveLink('/blog');
   }
 
   getMarked(val: any) {
@@ -49,7 +63,7 @@ export class ViewPostComponent implements OnInit, AfterViewInit {
     switch (posts.length) {
       case 0:
         console.warn('No tenemos post con slug', this.slug);
-        this.router.navigate(['list-post']);
+        this.router.navigate(['./blog']);
         break;
       case 1:
         this.post = posts[0];

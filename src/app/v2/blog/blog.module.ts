@@ -1,4 +1,5 @@
 import { AdsModule } from '../../modules/ads/ads.module';
+import { BlogComponent } from './blog/blog.component';
 import { BlogRoutingModule } from './blog-routing.module';
 import { CommonModule } from '@angular/common';
 import { CreatePostComponent } from './post/create-post/create-post.component';
@@ -7,10 +8,10 @@ import { ListPostComponent } from './post/list-post/list-post.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { MaterialModule } from '../material/material.module';
 import { NgModule } from '@angular/core';
+import { PostPresentationComponent } from './post/post-presentation/post-presentation.component';
 import { SharedModule } from '../../modules/shared/shared.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { ViewPostComponent } from './post/view-post/view-post.component';
-import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { BlogComponent } from './blog/blog.component';
     AdsModule,
     SharedModule,
     TranslateModule,
+    PostPresentationComponent,
   ],
   exports: [],
 })

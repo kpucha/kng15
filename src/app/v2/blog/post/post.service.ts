@@ -11,6 +11,7 @@ import {
   collectionData,
   CollectionReference,
   DocumentData,
+  getDoc,
   Firestore,
   Query,
   query,
@@ -18,6 +19,7 @@ import {
   doc,
   setDoc,
   addDoc,
+  docData,
 } from '@angular/fire/firestore';
 
 @Injectable({
@@ -63,6 +65,18 @@ export class PostService {
 
   getPostList(): Observable<Post[]> {
     return collectionData(this.postCollection) as Observable<Post[]>;
+  }
+
+  getPostById(id: string): Observable<Post> {
+    if (id.trim() == '') throw new Error('SLUG REQUIRED');
+    let postRef = doc(this.firestore, POST.FIRESTORE_COLLECTION, id);
+    return docData(postRef) as Observable<Post>;
+  }
+
+  getDraftById(id: string): Observable<Post> {
+    if (id.trim() == '') throw new Error('SLUG REQUIRED');
+    let draftRef = doc(this.firestore, POST.FIRESTORE_DRAFT_COLLECTION, id);
+    return docData(draftRef) as Observable<Post>;
   }
 
   getPostBySlug(slug: string): Observable<Post[]> {

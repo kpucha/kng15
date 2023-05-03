@@ -7,6 +7,7 @@ import { LayoutService } from 'src/app/modules/layout/layout.service';
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit, AfterViewInit {
+  panelOpenState = false;
   constructor(private layout: LayoutService) {}
   ngOnInit(): void {
     this.layout.setActiveLink('/admin');

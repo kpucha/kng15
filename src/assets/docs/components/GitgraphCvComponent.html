@@ -1,0 +1,938 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>kpucha.dev - docs</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">kpucha.dev - docs</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  GitgraphCvComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/public/about/components/gitgraph-cv/gitgraph-cv.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>kng-gitgraph-cv</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./gitgraph-cv.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./gitgraph-cv.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#metroTemplateMod" >metroTemplateMod</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#translate" >translate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#createGit" >createGit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#createGraph" >createGraph</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#mergeBranch" >mergeBranch</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#simulateGit" >simulateGit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(translate: TranslateModule)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/pages/public/about/components/gitgraph-cv/gitgraph-cv.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>translate</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateModule</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createGit"></a>
+                    <span class="name">
+                        <span ><b>createGit</b></span>
+                        <a href="#createGit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createGit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/pages/public/about/components/gitgraph-cv/gitgraph-cv.component.ts:25</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createGraph"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>createGraph</b></span>
+                        <a href="#createGraph"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createGraph(graphContainer: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/pages/public/about/components/gitgraph-cv/gitgraph-cv.component.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>graphContainer</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mergeBranch"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>mergeBranch</b></span>
+                        <a href="#mergeBranch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mergeBranch(branch: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, branch2: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">src/app/pages/public/about/components/gitgraph-cv/gitgraph-cv.component.ts:160</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>branch</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>branch2</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/pages/public/about/components/gitgraph-cv/gitgraph-cv.component.ts:18</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="simulateGit"></a>
+                    <span class="name">
+                        <span ><b>simulateGit</b></span>
+                        <a href="#simulateGit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>simulateGit(gitgraph: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/pages/public/about/components/gitgraph-cv/gitgraph-cv.component.ts:72</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>gitgraph</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="metroTemplateMod"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>metroTemplateMod</b></span>
+                        <a href="#metroTemplateMod"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>templateExtend(TemplateName.Metro, {
+    colors: [
+      &#x27;#F94144&#x27;, // Rojo oscuro
+      &#x27;#F8961E&#x27;, // Naranja oscuro
+      &#x27;#DCAE1D&#x27;, // Amarillo oscuro
+      &#x27;#90BE6D&#x27;, // Verde oscuro
+      &#x27;#43AA8B&#x27;, // Verde azulado oscuro
+      &#x27;#4D908E&#x27;, // Azul verdoso oscuro
+      &#x27;#577590&#x27;, // Azul oscuro
+      &#x27;#277DA1&#x27;, // Azul claro oscuro
+      &#x27;#43AA8B&#x27;, // Verde azulado oscuro
+      &#x27;#4D908E&#x27;, // Azul verdoso oscuro
+      &#x27;#577590&#x27;, // Azul oscuro
+      &#x27;#277DA1&#x27;, // Azul claro oscuro
+      &#x27;#43AA8B&#x27;, // Verde azulado oscuro
+      &#x27;#4D908E&#x27;, // Azul verdoso oscuro
+      &#x27;#577590&#x27;, // Azul oscuro
+      &#x27;#277DA1&#x27;, // Azul claro oscuro
+    ],
+    commit: {
+      message: {
+        displayHash: false,
+        displayAuthor: false,
+      },
+      dot: {
+        size: 8,
+        strokeWidth: 1,
+      },
+    },
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/pages/public/about/components/gitgraph-cv/gitgraph-cv.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="translate"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>translate</b></span>
+                        <a href="#translate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>TranslateModule</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/pages/public/about/components/gitgraph-cv/gitgraph-cv.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { TranslateModule } from &#x27;@ngx-translate/core&#x27;;
+import {
+  createGitgraph,
+  Mode,
+  templateExtend,
+  TemplateName,
+} from &#x27;@gitgraph/js&#x27;;
+
+@Component({
+  selector: &#x27;kng-gitgraph-cv&#x27;,
+  templateUrl: &#x27;./gitgraph-cv.component.html&#x27;,
+  styleUrls: [&#x27;./gitgraph-cv.component.scss&#x27;],
+})
+export class GitgraphCvComponent implements OnInit {
+  constructor(public translate: TranslateModule) {}
+
+  ngOnInit() {
+    // const graphContainer &#x3D; document.getElementById(&#x27;gitgraph&#x27;)!;
+    // let gitgraph &#x3D; this.createGraph(graphContainer);
+    // this.simulateGit(gitgraph);
+    this.createGit();
+  }
+
+  createGit() {
+    const graphContainer &#x3D; document.getElementById(&#x27;gitgraph&#x27;)!;
+    let gitgraph &#x3D; this.createGraph(graphContainer);
+    this.simulateGit(gitgraph);
+  }
+
+  private metroTemplateMod &#x3D; templateExtend(TemplateName.Metro, {
+    colors: [
+      &#x27;#F94144&#x27;, // Rojo oscuro
+      &#x27;#F8961E&#x27;, // Naranja oscuro
+      &#x27;#DCAE1D&#x27;, // Amarillo oscuro
+      &#x27;#90BE6D&#x27;, // Verde oscuro
+      &#x27;#43AA8B&#x27;, // Verde azulado oscuro
+      &#x27;#4D908E&#x27;, // Azul verdoso oscuro
+      &#x27;#577590&#x27;, // Azul oscuro
+      &#x27;#277DA1&#x27;, // Azul claro oscuro
+      &#x27;#43AA8B&#x27;, // Verde azulado oscuro
+      &#x27;#4D908E&#x27;, // Azul verdoso oscuro
+      &#x27;#577590&#x27;, // Azul oscuro
+      &#x27;#277DA1&#x27;, // Azul claro oscuro
+      &#x27;#43AA8B&#x27;, // Verde azulado oscuro
+      &#x27;#4D908E&#x27;, // Azul verdoso oscuro
+      &#x27;#577590&#x27;, // Azul oscuro
+      &#x27;#277DA1&#x27;, // Azul claro oscuro
+    ],
+    commit: {
+      message: {
+        displayHash: false,
+        displayAuthor: false,
+      },
+      dot: {
+        size: 8,
+        strokeWidth: 1,
+      },
+    },
+  });
+
+  private createGraph(graphContainer: any) {
+    return createGitgraph(graphContainer, {
+      author: &#x27;Arturo Alcala&#x27;,
+      template: this.metroTemplateMod,
+      branchLabelOnEveryCommit: false,
+      responsive: true,
+      //mode: Mode.Compact,
+    });
+  }
+
+  simulateGit(gitgraph: any) {
+    const main &#x3D; gitgraph.branch(&#x27;main&#x27;);
+    main.commit({ subject: &#x27;1983&#x27;, tag: &#x27;Hello World!&#x27; });
+    const education &#x3D; main.branch(&#x27;education&#x27;);
+    education.commit({ subject: &#x27;1999&#x27;, tag: &#x27;Graduado escolar&#x27; });
+    education.commit({ subject: &#x27;2001&#x27;, tag: &#x27;Bachiller&#x27; });
+    education.commit({
+      subject: &#x27;2003&#x27;,
+      tag: &#x27;Instalación, mantenimiento y reparación de ordenadores&#x27;,
+    });
+    const work &#x3D; main.branch(&#x27;work&#x27;);
+    work.commit({ style: { message: { display: false } } });
+    const improvink &#x3D; work.branch(&#x27;Improvink&#x27;);
+    education.commit({ subject: &#x27;2007&#x27;, tag: &#x27;Curso superior de Finanzas&#x27; });
+    improvink.commit({ subject: &#x27;2004 - 2008&#x27;, tag: &#x27;Broker&#x27; });
+    this.mergeBranch(work, improvink);
+    education.commit({ subject: &#x27;2009&#x27;, tag: &#x27;Especialización JAVA/J2EE&#x27; });
+    education.commit({ subject: &#x27;2009&#x27;, tag: &#x27;Artes Gráficas&#x27; });
+    work.commit({ style: { message: { display: false } } });
+    const ibersaf &#x3D; work.branch(&#x27;Ibersaf&#x27;);
+    ibersaf.commit({ subject: &#x27;2009 - 2009&#x27;, tag: &#x27;Tech &amp; Jr Dev&#x27; });
+    this.mergeBranch(work, ibersaf);
+    const pentasys &#x3D; work.branch({ name: &#x27;Pentasys&#x27; });
+    pentasys.commit({ subject: &#x27;2009 - 2010&#x27;, tag: &#x27;JR Developer&#x27; });
+    this.mergeBranch(work, pentasys);
+    const mensoft &#x3D; work.branch({ name: &#x27;MENSOFT&#x27; });
+    education.commit({ subject: &#x27;2010&#x27;, tag: &#x27;Banksphere&#x27; });
+    education.commit({
+      subject: &#x27;2010&#x27;,
+      tag: &#x27;Seguridad en aplicaciones JAVA&#x27;,
+    });
+    mensoft.commit(&#x27;Inditex - GIS/JIRA&#x27;);
+    mensoft.commit(&#x27;Redur - Atlas&#x27;);
+    mensoft.commit(&#x27;Composan - SGJT&#x27;);
+    mensoft.commit(&#x27;Inditex - Web Salarial&#x27;);
+    mensoft.commit(&#x27;O.N.C.E - EVONCE&#x27;);
+    mensoft.commit({ subject: &#x27;2010 - 2014&#x27;, tag: &#x27;SR Developer&#x27; });
+    this.mergeBranch(work, mensoft);
+    const ibermatica &#x3D; work.branch({ name: &#x27;Ibermática&#x27; });
+    education.commit({ subject: &#x27;2014&#x27;, tag: &#x27;Cuadernos de viaje&#x27; });
+    education.commit({ subject: &#x27;2014&#x27;, tag: &#x27;Equipo a la carta&#x27; });
+    education.commit({ subject: &#x27;2014&#x27;, tag: &#x27;Taller de entrevistas&#x27; });
+    education.commit({ subject: &#x27;2014&#x27;, tag: &#x27;Finanzas para no financieros&#x27; });
+    education.commit({ subject: &#x27;2014&#x27;, tag: &#x27;Caso RRHH&#x27; });
+    education.commit({ subject: &#x27;2014&#x27;, tag: &#x27;Venta de Ideas&#x27; });
+    education.commit({ subject: &#x27;2014&#x27;, tag: &#x27;TelephoneTeacher&#x27; });
+    education.commit({ subject: &#x27;2014&#x27;, tag: &#x27;Conceptos mercantiles LOPD&#x27; });
+    education.commit({
+      subject: &#x27;2014&#x27;,
+      tag: &#x27;Visión global de la organización: Lego&#x27;,
+    });
+    education.commit({
+      subject: &#x27;2014&#x27;,
+      tag: &#x27;Visión global de la organización: Internacionalización&#x27;,
+    });
+    ibermatica.commit(&#x27;O.N.C.E - Juegosonce.es&#x27;);
+    ibermatica.commit(&#x27;O.N.C.E - Juegosonce BackOffice&#x27;);
+    main.commit({ subject: &quot;I&#x27;m Dad&quot;, tag: &#x27;v2&#x27; });
+    ibermatica.commit({ subject: &#x27;2014 - 2017&#x27;, tag: &#x27;Analyst Dev&#x27; });
+    this.mergeBranch(work, ibermatica);
+    education.commit({
+      subject: &#x27;2017&#x27;,
+      tag: &#x27;Productividad Personal en la Era Digital&#x27;,
+    });
+    education.commit({ subject: &#x27;2017&#x27;, tag: &#x27;Cloud Computing&#x27; });
+    const sngular &#x3D; work.branch({ name: &#x27;Sngular&#x27; });
+    sngular.commit(&#x27;FON - API&#x27;);
+    sngular.commit({ subject: &#x27;2017 - 2017&#x27;, tag: &#x27;Tech Lead&#x27; });
+    this.mergeBranch(work, sngular);
+    const ieg &#x3D; work.branch({ name: &#x27;IEG&#x27; });
+    ieg.commit(&#x27;IEG - BackOffice&#x27;);
+    ieg.commit(&#x27;Monaco Group - BackOffice&#x27;);
+    ieg.commit({ subject: &#x27;2017 - 2017&#x27;, tag: &#x27;CTO&#x27; });
+    this.mergeBranch(work, ieg);
+    const dmg &#x3D; work.branch({ name: &#x27;DMG&#x27; });
+    dmg.commit(&#x27;BrainLinks España - Minning Farm&#x27;);
+    dmg.commit(&#x27;Hotei - Trading Robots&#x27;);
+    dmg.commit({ subject: &#x27;2017 - 2019&#x27;, tag: &#x27;CTO &amp; Founder&#x27; });
+    this.mergeBranch(work, dmg);
+    const laude &#x3D; work.branch({ name: &#x27;Laude Tech&#x27; });
+    laude.commit(&#x27;Iberdrola - CVMC&#x27;);
+    laude.commit(&#x27;BBVA - Hammer&#x27;);
+    laude.commit(&#x27;El Corte Ingles - EDP&#x27;);
+    laude.commit({ subject: &#x27;2019 - ...&#x27;, tag: &#x27;Sr. Software engineer&#x27; });
+    education.commit({ subject: &#x27;2023&#x27;, tag: &#x27;IA aplicada a la empresa&#x27; });
+    main.commit({ subject: &#x27;24/7&#x27;, tag: &#x27;Proud Dad&#x27; });
+  }
+
+  private mergeBranch(branch: any, branch2: any) {
+    branch.merge({
+      branch: branch2,
+      commitOptions: { style: { message: { display: false } } },
+    });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-card&gt;
+    &lt;mat-card-header&gt;
+        &lt;div mat-card-avatar&gt;&lt;mat-icon&gt;rebase&lt;/mat-icon&gt;&lt;/div&gt;
+        &lt;mat-card-title&gt;{{ &#x27;gitgraph-cv-title&#x27; | translate }}&lt;/mat-card-title&gt;
+    &lt;/mat-card-header&gt;
+    &lt;mat-card-content&gt;
+        &lt;div id&#x3D;&quot;gitgraph&quot;&gt;&lt;/div&gt;
+    &lt;/mat-card-content&gt;
+&lt;/mat-card&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./gitgraph-cv.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">#gitgraph {
+  padding-top: 1em;
+  padding-bottom: 1em !important;
+  font-size: 1em !important;
+  min-width: 100%;
+}
+.half-card {
+  display: inline-flex;
+  width: 50%;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-card>    <mat-card-header>        <div mat-card-avatar><mat-icon>rebase</mat-icon></div>        <mat-card-title>{{ \'gitgraph-cv-title\' | translate }}</mat-card-title>    </mat-card-header>    <mat-card-content>        <div id="gitgraph"></div>    </mat-card-content></mat-card></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'kng-about'},{'name': 'ActionButtonsComponent', 'selector': 'kng-action-buttons'},{'name': 'AdsHorizontalComponent', 'selector': 'kng-ads-horizontal'},{'name': 'AdsSkyscraperComponent', 'selector': 'kng-ads-skyscraper'},{'name': 'AppComponent', 'selector': 'kng-root'},{'name': 'BlogComponent', 'selector': 'kng-blog'},{'name': 'BlogPage', 'selector': 'kng-blog'},{'name': 'BrainTagsComponent', 'selector': 'kng-brain-tags'},{'name': 'ContactComponent', 'selector': 'kng-contact'},{'name': 'CookiesPolicyPage', 'selector': 'kng-cookies-policy'},{'name': 'CreatePostComponent', 'selector': 'kng-create-post'},{'name': 'DashboardPage', 'selector': 'kng-dashboard'},{'name': 'DashInfoComponent', 'selector': 'kng-dash-info'},{'name': 'EditPostComponent', 'selector': 'kng-edit-post'},{'name': 'EditPostPage', 'selector': 'kng-edit-post'},{'name': 'EmbedGithubComponent', 'selector': 'kng-embed-github'},{'name': 'FooterComponent', 'selector': 'kng-footer'},{'name': 'GitgraphCvComponent', 'selector': 'kng-gitgraph-cv'},{'name': 'HeaderComponent', 'selector': 'kng-header'},{'name': 'HomePage', 'selector': 'kng-home'},{'name': 'LangSelectorComponent', 'selector': 'kng-lang-selector'},{'name': 'ListPostComponent', 'selector': 'kng-list-post'},{'name': 'MenuButtonComponent', 'selector': 'kng-menu-button'},{'name': 'NavTabsComponent', 'selector': 'kng-nav-tabs'},{'name': 'PostInfoCardComponent', 'selector': 'kng-post-info-card'},{'name': 'PostPage', 'selector': 'kng-post'},{'name': 'PrivacyPolicyPage', 'selector': 'kng-privacy-policy'},{'name': 'SidenavComponent', 'selector': 'kng-sidenav'},{'name': 'SidenavSecondaryComponent', 'selector': 'kng-sidenav-secondary'},{'name': 'SignComponent', 'selector': 'kng-sign'},{'name': 'StudyHistComponent', 'selector': 'kng-study-hist'},{'name': 'SwitchComponent', 'selector': 'kng-switch'},{'name': 'ViewPostComponent', 'selector': 'kng-view-post'},{'name': 'WorkHistComponent', 'selector': 'kng-work-hist'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'GitgraphCvComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'GitgraphCvComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
